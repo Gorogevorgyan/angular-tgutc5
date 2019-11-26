@@ -12,8 +12,8 @@
   <div class="selects">
     <select name="" id="selectTypes" (change)="changeCategory($event.target.value)">
       <option value="Все категории">Все категории</option>
-      <option [value]="item.category" *ngFor="let item of data">
-        {{item.category}}
+      <option [value]="item" *ngFor="let item of arrTypes">
+        {{item}}
       </option>
     </select>
     <select id="selectNames" [(ngModel)]="tempItem">

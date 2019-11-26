@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class DumpComponent implements OnInit {
   @Input() data;
   @Output() onFilterData = new EventEmitter();
+  public arrTypes = [];
 
   public chartType = 'line';
   public total;
@@ -51,6 +52,9 @@ export class DumpComponent implements OnInit {
         });
         this.total += obj.balance;
         this.month += obj.monthBalance;
+        if (this.arrTypes.length < this.data.length) {
+          this.arrTypes.push(obj.category);
+        }
       });
     }
     this.chartDatasets = [
@@ -60,6 +64,7 @@ export class DumpComponent implements OnInit {
 
   changeCategory(type) {
     this.onFilterData.emit({filter: type});
+    this.tempItem = 'null';
     setTimeout(() => this.chartData(), 0);
   }
 
