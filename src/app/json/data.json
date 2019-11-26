@@ -1,0 +1,50 @@
+{
+  "companies": [
+    {
+      "id": 1234,
+      "name": "mocasine",
+      "type": "shoes",
+      "revenuePerWeek": {
+        "monday": 12,
+        "tuesday": 5,
+        "wednesday": 34,
+        "thursday": 15,
+        "friday": 10,
+        "saturday": 21,
+        "sunday": 20
+      },
+      "revenue": 1500,
+      "monthRevenue": 345
+    }, {
+      "id": 1235,
+      "name": "jeans",
+      "type": "trousers",
+      "revenuePerWeek": {
+        "monday": 93,
+        "tuesday": 3,
+        "wednesday": 43,
+        "thursday": 23,
+        "friday": 21,
+        "saturday": 6,
+        "sunday": 4
+      },
+      "revenue": 1800,
+      "monthRevenue": 250
+    }, {
+      "id": 1236,
+      "name": "transparent",
+      "type": "bag",
+      "revenuePerWeek": {
+        "monday": 23,
+        "tuesday": 1,
+        "wednesday": 23,
+        "thursday": 4,
+        "friday": 21,
+        "saturday": 35,
+        "sunday": 11
+      },
+      "revenue": 700,
+      "monthRevenue": 0
+    }
+  ]
+}

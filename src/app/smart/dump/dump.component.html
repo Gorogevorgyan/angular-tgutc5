@@ -1,0 +1,32 @@
+<div style="display: block">
+  <canvas mdbChart
+          [chartType]="chartType"
+          [datasets]="chartDatasets"
+          [labels]="chartLabels"
+          [colors]="chartColors"
+          [options]="chartOptions"
+          [legend]="true"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)">
+  </canvas>
+  <div class="selects">
+    <select name="" id="selectTypes" (change)="changeCategory($event.target.value)">
+      <option value="Все категории">Все категории</option>
+      <option [value]="item.category" *ngFor="let item of data">
+        {{item.category}}
+      </option>
+    </select>
+    <select id="selectNames" [(ngModel)]="tempItem">
+      <option [value]="null">Все вхождение</option>
+      <option [value]="item.id" *ngFor="let item of data">
+        {{item.name}}
+      </option>
+    </select>
+  </div>
+  <div class="data-total-month">
+    <div *ngIf="month">Month: {{month}}</div>
+    <button *ngIf="tempItem != 'null'" (click)="printId()">Open</button>
+    <div *ngIf="total">Total: {{total}}</div>
+  </div>
+</div>
+
