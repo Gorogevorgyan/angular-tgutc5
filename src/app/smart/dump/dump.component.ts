@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class DumpComponent implements OnInit {
   @Input() data;
   @Output() onFilterData = new EventEmitter();
+  @Output() onItemSelected = new EventEmitter();
   public arrTypes = [];
 
   public chartType = 'line';
@@ -68,8 +69,8 @@ export class DumpComponent implements OnInit {
     setTimeout(() => this.chartData(), 0);
   }
 
-  printId() {
-    console.log(this.tempItem);
+  outputItem() {
+    this.onItemSelected.emit(this.data[this.tempItem])
   }
 
 }

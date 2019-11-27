@@ -19,7 +19,9 @@ export class SmartComponent implements OnInit {
       this.data = d.data;
     });
   }
-
+  printId(e){
+    console.log(e.id)
+  }
   filter(e) {
       this.store.dispatch(new FilterType(e));
   }

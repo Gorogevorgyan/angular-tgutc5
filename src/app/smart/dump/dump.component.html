@@ -18,14 +18,14 @@
     </select>
     <select id="selectNames" [(ngModel)]="tempItem">
       <option [value]="null">Все вхождение</option>
-      <option [value]="item.id" *ngFor="let item of data">
+      <option [value]="index" *ngFor="let item of data; let index = index;">
         {{item.name}}
       </option>
     </select>
   </div>
   <div class="data-total-month">
     <div *ngIf="month">Month: {{month}}</div>
-    <button *ngIf="tempItem != 'null'" (click)="printId()">Open</button>
+    <button *ngIf="tempItem != 'null'" (click)="outputItem()">Open</button>
     <div *ngIf="total">Total: {{total}}</div>
   </div>
 </div>
